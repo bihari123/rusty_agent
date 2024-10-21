@@ -1,0 +1,36 @@
+[package]
+name = "rusty_agent"
+version = "0.1.0"
+edition = "2021"
+authors=["Tarun Thakur <thakur.cs.tarun@gmail.com>"]
+license ="GPL-3.0 license"
+
+[lints.clippy]
+enum_glob_use = "warn"
+pedantic = "deny"
+nursery = "warn"
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sqlite = "0.30.4"
+thiserror = "1.0.40"
+lazy_static = "1.4.0"
+chrono = "0.4"
+base64 = "0.21.2"
+bcrypt = "0.15.0"
+cron = "0.12.0"
+axum = { version = "0.6.20", default-features = false, features = ["json", "headers", "query"] }
+axum-server = {version = "0.5.1", features = ["tls-rustls"]}
+tokio = {version = "1.32.0", default-features = false, features = ["full"]}
+axum-auth = { version = "0.4", default-features = false, features = ["auth-basic"] }
+hostname = "0.1.4"
+libc = "0.2.147"
+mongodb = "2.6.1"
+clap = { version = "4.4.4", features = ["derive"] }

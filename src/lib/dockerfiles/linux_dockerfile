@@ -1,0 +1,14 @@
+FROM registry.access.redhat.com/ubi8/ubi:latest
+
+COPY . /app
+
+WORKDIR /app
+
+RUN yum install -y rust-toolset
+
+RUN cargo update
+
+RUN cargo b -r --target x86_64-unknown-linux-gnu
+
+CMD ["echo", "Rusty Agent is now compiled for x86_64 Architecture Linux!"]
+

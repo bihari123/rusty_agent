@@ -1,0 +1,2 @@
+if you get an error like "libsqlite3 not found", then run the following commands:
+ sudo apt install libsqlite3-dev
